@@ -17,7 +17,7 @@ function EditUser() {
   useEffect(() => {
     console.log("userID form params: ", id);
     try {
-      axios.get(`http://localhost:8000/api/user/${id}`).then((response) => {
+      axios.get(`https://crud-hazel-one.vercel.app/api/user/${id}`).then((response) => {
         console.log("API response: ", response.data);
         setUser(response.data);
         setLoading(false);
@@ -40,7 +40,7 @@ function EditUser() {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/update/user/${id}`,
+        `https://crud-hazel-one.vercel.app/api/update/user/${id}`,
         user
       );
       alert(response.data.message);

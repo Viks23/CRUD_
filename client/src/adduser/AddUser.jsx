@@ -20,7 +20,7 @@ function AddUser() {
     }
     const submitForm = async(e) =>{
         e.preventDefault();
-        await axios.post("http://localhost:8000/api/user",user)
+        await axios.post("https://crud-hazel-one.vercel.app/api/user",user)
         .then((response)=>{
             alert(response.data.message);
             navigate("/")
