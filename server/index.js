@@ -13,6 +13,11 @@ dotenv.config();
 const PORT = process.env.PORT || 7000;
 const MONGOURL = process.env.MONGO_URL;
 
+if (!MONGOURL) {
+  console.error("MONGO_URL environment variable is not set");
+  process.exit(1);
+}
+
 mongoose
   .connect(MONGOURL)
   .then(() => {
